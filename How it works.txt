@@ -1,0 +1,15 @@
+The system uses computer vision techniques powered by Mediapipe’s Face Mesh model and OpenCV to monitor students via webcam during online exams in real-time.
+
+Face Mesh Detection: Mediapipe detects 468 facial landmarks to track the position of the face, eyes, and mouth.
+
+Eye Movement Tracking: The system continuously monitors the position of the eyes. If the eyes move too far left or right, or if they aren’t visible, it raises a "Looking Away" alert.
+
+Mouth Status Monitoring: By calculating the distance between the upper and lower lips, the system detects if the mouth is open, which could indicate talking or reading answers aloud — triggering a "Mouth Open / Talking" alert.
+
+Face Visibility Check: The system measures the vertical distance between the chin and forehead to determine if the full face is visible. If the face is partially or fully hidden, it triggers a "Face Not Fully Visible" alert.
+
+Voice Detection: The system listens for voice input via the microphone during the exam and triggers alerts when unauthorized talking is detected.
+
+Multi-Person Detection: The program can detect multiple faces within the frame. If a second face appears during the exam session, it triggers a "Multiple Persons Detected" alert.
+
+Screenshot Logging with Timestamps: Whenever a suspicious event is detected, a screenshot is automatically captured with a timestamp and saved to a specific directory for examiners to review later.
